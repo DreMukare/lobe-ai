@@ -1,7 +1,7 @@
-import React from 'react';
+import Layout from '../components/Layout';
 
 const Overview = () => {
-	return <div>Overview</div>;
+	return <Layout>Overview</Layout>;
 };
 
 export default Overview;

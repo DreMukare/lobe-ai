@@ -1,7 +1,7 @@
-import React from 'react';
+import Layout from '../components/Layout';
 
 const Examples = () => {
-	return <div>Examples</div>;
+	return <Layout>Examples</Layout>;
 };
 
 export default Examples;

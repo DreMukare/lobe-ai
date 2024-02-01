@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import Footer from './Footer';
 import Navbar from './Navbar';
+import Hero from './Hero';
+import { useLocation } from 'react-router-dom';
 
 const LayoutContainer = styled.div`
 	display: flex;
@@ -20,6 +22,7 @@ function Layout(props: { children: React.ReactNode }) {
 	return (
 		<LayoutContainer>
 			<Navbar />
+			<Hero />
 			<InnerLayoutContainer>
 				{children}
 				<Footer />

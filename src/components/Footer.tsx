@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import DownloadBtn from './DownloadBtn';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment } from '@fortawesome/free-regular-svg-icons';
+import { faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const FooterContainer = styled.footer`
 	width: inherit;
@@ -26,33 +29,35 @@ const CallToActionText = styled.h1`
 	font-size: 3.5em;
 	font-weight: 900;
 	width: 70%;
-	color: #;
 `;
 
 const Hr = styled.hr`
 	width: 70%;
 	height: 1px;
 	background-color: #767676;
+	margin-bottom: 3em;
 `;
 
 const FooterBottom = styled.div`
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
-	width: 100%;
+	width: 60%;
 `;
 
 const FooterColumnHeader = styled.h3`
 	font-size: 1.5em;
 	font-weight: 700;
+	line-height: 1.5em;
 	color: #333333;
+	margin-bottom: 0.37em;
 `;
 
 const FooterColumn = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: 2em;
+	gap: 1em;
 `;
 
 const FooterColumnLink = styled.div`
@@ -64,11 +69,18 @@ const SocialMediaLinks = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 2em;
+	gap: 1em;
+	margin-top: 2em;
+	margin-left: -2em;
 `;
 
 const SocialMediaLink = styled.a`
 	border-radius: 100%;
+	width: 3em;
+	height: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: #04ddb2;
 	color: #fff;
 	cursor: pointer;
@@ -84,6 +96,8 @@ const Footer = () => {
 		{ title: 'Resources', links: ['Help', 'Tour', 'Contact', 'Privacy'] },
 	];
 
+	const icons = [faComment, faTwitter, faYoutube];
+
 	return (
 		<FooterContainer>
 			<CallToAction>
@@ -93,10 +107,26 @@ const Footer = () => {
 			<Hr />
 			<FooterBottom>
 				<FooterColumn>
-					<FooterColumnHeader>Lobe</FooterColumnHeader>
-					<p>A product by Microsoft.</p>
-					<p></p>
-					<p></p>
+					<FooterColumnHeader
+						style={{
+							marginBottom: '-0.3em',
+						}}
+					>
+						Lobe
+					</FooterColumnHeader>
+					<p>
+						A product by Microsoft.
+						<br />
+						<br />
+						All rights reserved.
+						<br />
+						<br />
+						© Microsoft 2021
+						<br />
+						<br />
+						<br />
+						<br />
+					</p>
 				</FooterColumn>
 				{columnData.map((column, idx: number) => {
 					return (
@@ -108,6 +138,15 @@ const Footer = () => {
 						</FooterColumn>
 					);
 				})}
+				<SocialMediaLinks>
+					{icons.map((icon, idx: number) => {
+						return (
+							<SocialMediaLink key={idx}>
+								<FontAwesomeIcon icon={icon} size="lg" />
+							</SocialMediaLink>
+						);
+					})}
+				</SocialMediaLinks>
 			</FooterBottom>
 		</FooterContainer>
 	);

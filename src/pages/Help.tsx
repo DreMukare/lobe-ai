@@ -1,7 +1,7 @@
-import React from 'react';
+import Layout from '../components/Layout';
 
 const Help = () => {
-	return <div>Help</div>;
+	return <Layout>Help</Layout>;
 };
 
 export default Help;
