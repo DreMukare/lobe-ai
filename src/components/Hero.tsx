@@ -30,16 +30,21 @@ const Hero = () => {
 	const location = useLocation();
 	const currentRoute: any = location.pathname;
 
-	if (!currentRoute || currentRoute === '/help' || currentRoute === '/overview')
+	if (
+		!currentRoute ||
+		currentRoute === '/' ||
+		currentRoute === '/help' ||
+		currentRoute === '/overview'
+	)
 		return null;
+
+	const upperCaseCurrentRoute =
+		currentRoute.slice(1)[0].toUpperCase() + currentRoute.slice(2);
 
 	return (
 		<HeroContainer>
 			<HeroTitle>
-				Lobe{' '}
-				<HeroTitleColored>
-					{currentRoute.slice(1)[0].toUpperCase() + currentRoute.slice(2)}
-				</HeroTitleColored>
+				Lobe <HeroTitleColored>{upperCaseCurrentRoute}</HeroTitleColored>
 			</HeroTitle>
 			{currentRoute === '/examples' && (
 				<HeroBody>
