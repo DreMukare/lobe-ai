@@ -25,15 +25,20 @@ const VideoImage = styled.img`
 	transition-timing-function: ease-in-out;
 
 	&:hover {
-		box-shadow: 1px 45px 100px 5px rgba(51, 51, 51, 0.3);
+		box-shadow: 1px 25px 100px 5px rgba(51, 51, 51, 0.3);
 	}
 `;
 
-const TourContent = () => {
+const TourContent = (props: {
+	modalOpen: boolean;
+	setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+	const { setModalOpen, modalOpen } = props;
+
 	return (
 		<ImageContainer
 			onClick={() => {
-				//open overlay modal
+				setModalOpen(!modalOpen);
 			}}
 		>
 			<VideoImage
