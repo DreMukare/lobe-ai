@@ -22,7 +22,11 @@ const CardHero = styled.div`
 	width: 100%;
 	height: 50%;
 `;
-const VideoContainer = styled.video``;
+const VideoContainer = styled.video`
+	height: auto;
+	width: 100%;
+	object-fit: contain;
+`;
 const ImageContainer = styled.img`
 	height: auto;
 	width: 100%;
@@ -55,12 +59,12 @@ const Card = (props: {
 		<CardContainer>
 			<CardHero>
 				{videoUrl ? (
-					<VideoContainer src={videoUrl} />
+					<VideoContainer src={videoUrl} autoPlay loop />
 				) : (
 					<ImageContainer src={imageUrl} alt={altText} />
 				)}
 			</CardHero>
-			<hr />
+
 			<TextContainer>
 				<CardTitle>{cardTitle}</CardTitle>
 				<CardText>{cardText}</CardText>
