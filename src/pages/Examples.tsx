@@ -41,6 +41,13 @@ const Examples = () => {
 			subTitle:
 				'Train your app to react to different expressions allowing people to send emoji reactions using just their face.',
 		},
+		{
+			videoUrl:
+				'https://www.lobe.ai/assets/examples/Painting%20with%20Mike.mp4',
+			title: 'Interactive Painting',
+			subTitle:
+				'Train your app to respond with sounds and stories while kids draw to create engaging learning experiences.',
+		},
 	];
 
 	return (

@@ -25,7 +25,7 @@ const CardHero = styled.div`
 const VideoContainer = styled.video`
 	height: auto;
 	width: 100%;
-	object-fit: contain;
+	object-fit: cover;
 `;
 const ImageContainer = styled.img`
 	height: auto;
@@ -37,7 +37,9 @@ const TextContainer = styled.div`
 	padding: 1em 2em 2em 2em;
 	font-size: 1.1em;
 `;
-const CardTitle = styled.h3``;
+const CardTitle = styled.h3<{ $cardDate: boolean }>`
+	margin-top: ${(prop) => (prop.$cardDate ? '2em' : '4em')};
+`;
 const CardText = styled.p``;
 const CardDateContainer = styled.div``;
 const CardDate = styled.p`
@@ -66,7 +68,7 @@ const Card = (props: {
 			</CardHero>
 
 			<TextContainer>
-				<CardTitle>{cardTitle}</CardTitle>
+				<CardTitle $cardDate={!!cardDate}>{cardTitle}</CardTitle>
 				<CardText>{cardText}</CardText>
 				{cardDate && (
 					<CardDateContainer>
