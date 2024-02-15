@@ -30,12 +30,7 @@ const Hero = () => {
 	const location = useLocation();
 	const currentRoute: any = location.pathname;
 
-	if (
-		!currentRoute ||
-		currentRoute === '/' ||
-		currentRoute === '/help' ||
-		currentRoute === '/overview'
-	)
+	if (!currentRoute || currentRoute === '/' || currentRoute === '/overview')
 		return null;
 
 	const upperCaseCurrentRoute =
