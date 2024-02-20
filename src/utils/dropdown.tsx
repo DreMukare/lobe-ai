@@ -35,6 +35,13 @@ const dropdownData = {
 			),
 		},
 	],
+	label: [],
+	train: [],
+	results: [],
+	play: [],
+	export: [],
+	improving: [],
+	tips: [],
 };
 
 export { dropdownData };
