@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { dropdownData } from '../utils/dropdown';
+import Dropdown from '../components/Dropdown';
 
 const InfoHeader = styled.p`
 	font-weight: normal;
@@ -101,7 +103,28 @@ const Help = () => {
 						)}
 					</TabSection>
 				</TabSectionContainer>
-				<DropdownSectionContainer></DropdownSectionContainer>
+				<DropdownSectionContainer>
+					{
+						//@ts-ignore
+						dropdownData[activeTab.toLowerCase()].map(
+							(
+								dropdown: {
+									titleText: string;
+									content: React.ReactNode;
+								},
+								idx: number
+							) => {
+								return (
+									<Dropdown
+										key={idx}
+										titleText={dropdown.titleText}
+										content={dropdown.content}
+									/>
+								);
+							}
+						)
+					}
+				</DropdownSectionContainer>
 			</FAQSection>
 		</Layout>
 	);
