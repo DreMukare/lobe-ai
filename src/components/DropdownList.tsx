@@ -1,3 +1,4 @@
+import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface DropdownListProps {
@@ -9,15 +10,27 @@ const DropdownList: React.FC<DropdownListProps> = ({ list }) => {
 		<div
 			style={{
 				display: 'flex',
+				flexDirection: 'column',
 				justifyContent: 'center',
-				gap: '1em',
-				marginBottom: '1em',
+				maxWidth: '70%',
 			}}
 		>
 			{list.map((listItem: React.ReactElement, idx: number) => {
 				return (
-					<div key={idx}>
-						<FontAwesomeIcon icon={['fas', 'check-circle']} />
+					<div
+						key={idx}
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							gap: '1em',
+						}}
+					>
+						<FontAwesomeIcon
+							icon={faCheckCircle}
+							style={{
+								color: '#04DDB2',
+							}}
+						/>
 						{listItem}
 					</div>
 				);

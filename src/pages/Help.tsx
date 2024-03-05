@@ -45,7 +45,10 @@ const StyledLink = styled(Link)`
 	color: inherit;
 	cursor: pointer;
 `;
-const DropdownSectionContainer = styled.div``;
+const DropdownSectionContainer = styled.div`
+	width: 70%;
+	overflow: none;
+`;
 
 const Help = () => {
 	const [activeTab, setActiveTab] = useState('Welcome');
